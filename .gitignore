@@ -1,0 +1,25 @@
+# Local user documents and generated PDF outputs
+*.pdf
+!tests/fixtures/**/*.pdf
+!tests/golden/**/*.pdf
+
+# Environment and local runtime state
+.env
+.env.*
+!.env.example
+
+# JavaScript and Python dependency/cache output
+node_modules/
+dist/
+build/
+.vite/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
