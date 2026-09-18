@@ -10,11 +10,13 @@
 
 # JavaScript and Python dependency/cache output
 node_modules/
+.venv/
 dist/
 build/
 .vite/
 __pycache__/
 *.py[cod]
+*.egg-info/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
@@ -23,3 +25,8 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/
+
+# Local engine jobs and generated QA artifacts
+services/local-engine/runtime/
+tmp/pdfs/
+output/pdf/

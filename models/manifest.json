@@ -1,0 +1,41 @@
+{
+  "active": null,
+  "classes": [
+    "background",
+    "printed_content",
+    "handwriting",
+    "structural_line",
+    "ambiguous_mark"
+  ],
+  "fallback": {
+    "id": "opencv-print-aware-baseline",
+    "version": "0.5.1",
+    "automaticRemovalPolicy": "remove-all-candidates-unless-protected-by-print-or-structure-evidence",
+    "thresholds": {
+      "foregroundGrayMaximum": 239,
+      "printedComponentMeanMaximum": 145,
+      "printedComponentDarkFractionMinimum": 0.35,
+      "printedDarkPixelMaximum": 119,
+      "lowConfidenceOcrCoreDarkMaximum": 84,
+      "printedOcrConfidenceMinimum": 93,
+      "lightLowConfidenceOcrMeanMinimum": 165,
+      "preserveDilationSize": 5,
+      "hardPreserveDilationSize": 3,
+      "structuralPreserveDilationSize": 0,
+      "handwritingOverrideDilationSize": 3,
+      "handwritingOverrideEvidence": "color-or-pdf-annotation-only",
+      "removeDilationSize": 7,
+      "removeDilationShape": "ellipse",
+      "faintGrowSize": 11,
+      "faintGrayMaximum": 249,
+      "faintLocalContrastMinimum": 5,
+      "automaticRestoration": "local-background-fill-with-structural-line-redraw",
+      "automaticBackgroundKernelSize": 31,
+      "manualRestoration": "white-fill",
+      "structuralMinimumSpanDivisor": 25,
+      "structuralMinimumAspectRatio": 6
+    },
+    "license": "project-source-license"
+  },
+  "models": []
+}

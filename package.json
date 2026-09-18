@@ -1,0 +1,21 @@
+{
+  "name": "pdf-cleaner",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n engine,web -c blue,green \"npm:dev:engine\" \"npm:dev:web\"",
+    "dev:web": "npm run dev --workspace @pdf-cleaner/web",
+    "dev:engine": ".venv/bin/uvicorn app.main:app --app-dir services/local-engine --host 127.0.0.1 --port 8000 --reload",
+    "build": "npm run build --workspace @pdf-cleaner/web",
+    "test": "npm run test:engine && npm run test:web",
+    "test:engine": ".venv/bin/pytest services/local-engine/tests",
+    "test:web": "npm run test --workspace @pdf-cleaner/web",
+    "lint": ".venv/bin/ruff check services/local-engine/app services/local-engine/tests && npm run lint --workspace @pdf-cleaner/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
