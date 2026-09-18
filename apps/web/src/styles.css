@@ -17,9 +17,7 @@ button:disabled { opacity: 0.42; cursor: not-allowed; }
 .app-shell { min-height: 100vh; display: grid; grid-template-rows: 48px minmax(0, 1fr); }
 .topbar { display: flex; align-items: center; gap: 16px; padding: 0 14px; background: #14211d; color: #f7faf8; border-bottom: 1px solid #0a1310; }
 .brand-block { display: flex; align-items: center; gap: 9px; min-width: 0; }
-.brand-mark { position: relative; width: 24px; height: 24px; flex: 0 0 24px; }
-.brand-pencil { position: absolute; top: 0; left: 1px; transform: rotate(-12deg); }
-.brand-eraser { position: absolute; right: 0; bottom: 0; color: #8ee2bd; transform: rotate(10deg); }
+.brand-icon { width: 27px; height: 27px; flex: 0 0 27px; border-radius: 6px; }
 .brand-block h1 { margin: 0; font-size: 15px; font-weight: 680; white-space: nowrap; }
 .version { padding: 2px 5px; border: 1px solid #6f817a; border-radius: 3px; color: #becac5; font-size: 9px; font-weight: 700; }
 .engine-status { margin-left: auto; display: flex; align-items: center; gap: 6px; color: #b8c5c0; font-size: 12px; white-space: nowrap; }

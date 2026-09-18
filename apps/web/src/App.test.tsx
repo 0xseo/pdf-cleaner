@@ -91,8 +91,9 @@ describe('App', () => {
   })
 
   it('opens on the real PDF upload workspace', async () => {
-    render(<App />)
+    const { container } = render(<App />)
     expect(screen.getByRole('heading', { name: 'PDF 필기 지우개' })).toBeInTheDocument()
+    expect(container.querySelector('.brand-icon')).toHaveAttribute('src', './icons/icon-192x192.png')
     expect(screen.getByRole('heading', { name: 'PDF 또는 작업 파일 놓기' })).toBeInTheDocument()
     expect(screen.getByText('작업 파일 열기')).toBeInTheDocument()
     expect(screen.queryByText(/이 컴퓨터의 로컬 엔진에서만/)).not.toBeInTheDocument()

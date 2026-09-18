@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /jobs/
+Disallow: /runtime/
+
+Sitemap: https://handwriting-eraser.0xseo94.com/sitemap.xml

@@ -21,6 +21,21 @@ Pushes that change the web app on `main` deploy `apps/web/dist` through GitHub P
 
 The deployed HTTPS page still sends all PDF data only to the engine on `127.0.0.1`. The engine allows the exact production origin in addition to localhost development origins. Current Chrome versions ask the user for Local Network Access permission when a public page first contacts the loopback engine; denying that permission leaves the app offline.
 
+### Search registration
+
+After the custom domain resolves over HTTPS, verify that the following production URLs return `200` before requesting indexing:
+
+- `https://handwriting-eraser.0xseo94.com/robots.txt`
+- `https://handwriting-eraser.0xseo94.com/sitemap.xml`
+- `https://handwriting-eraser.0xseo94.com/site.webmanifest`
+- `https://handwriting-eraser.0xseo94.com/og-image.png`
+
+In Google Search Console, add the domain or exact HTTPS URL-prefix property, complete ownership verification, submit `sitemap.xml` in the Sitemaps report, and inspect the canonical home URL. Validate the deployed JSON-LD with Google's Rich Results Test even though search appearance is not guaranteed.
+
+In Naver Search Advisor, register the exact HTTPS site, complete ownership verification, then submit `sitemap.xml` under `요청 > 사이트맵 제출` and confirm that robots.txt is readable. If either service provides an HTML meta verification token, add only that service-issued token to `apps/web/index.html`; never commit account credentials.
+
+The canonical URL, Open Graph URL, JSON-LD URL, sitemap, robots.txt, and manifest currently assume the production site is hosted at the domain root. Update all of them together if the public URL changes.
+
 ## Verification
 
 ```bash

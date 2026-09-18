@@ -14,7 +14,6 @@ import {
   LoaderCircle,
   Maximize2,
   Palette,
-  Pencil,
   Redo2,
   Save,
   Shield,
@@ -368,10 +367,7 @@ function App() {
     <main className="app-shell">
       <header className="topbar">
         <div className="brand-block">
-          <span className="brand-mark" aria-hidden="true">
-            <Pencil className="brand-pencil" size={18} />
-            <Eraser className="brand-eraser" size={13} />
-          </span>
+          <img className="brand-icon" src="./icons/icon-192x192.png" alt="" />
           <h1>PDF 필기 지우개</h1>
           <span className="version">LOCAL</span>
         </div>

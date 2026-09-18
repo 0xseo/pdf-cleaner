@@ -1,0 +1,35 @@
+{
+  "id": "/",
+  "name": "PDF 필기 지우개",
+  "short_name": "필기 지우개",
+  "description": "시험지 PDF의 후발 손글씨를 로컬 PC에서 제거하고 인쇄물을 보존하는 웹 앱",
+  "lang": "ko-KR",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#e9eeeb",
+  "theme_color": "#14211d",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
