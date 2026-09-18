@@ -15,6 +15,12 @@ npm run dev
 
 Open `http://127.0.0.1:5173`. The local API listens on `http://127.0.0.1:8000`.
 
+## Web Deployment
+
+Pushes that change the web app on `main` deploy `apps/web/dist` through GitHub Pages. The production custom domain is `https://handwriting-eraser.0xseo94.com`, which should use a DNS `CNAME` record targeting `0xseo.github.io`.
+
+The deployed HTTPS page still sends all PDF data only to the engine on `127.0.0.1`. The engine allows the exact production origin in addition to localhost development origins. Current Chrome versions ask the user for Local Network Access permission when a public page first contacts the loopback engine; denying that permission leaves the app offline.
+
 ## Verification
 
 ```bash

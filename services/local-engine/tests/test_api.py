@@ -38,6 +38,33 @@ def test_health_is_local(client: TestClient) -> None:
     assert response.json() == {"status": "ok", "scope": "localhost-only"}
 
 
+def test_cors_allows_only_local_and_production_origins(client: TestClient) -> None:
+    for origin in (
+        "http://127.0.0.1:5173",
+        "http://localhost:5173",
+        "https://handwriting-eraser.0xseo94.com",
+    ):
+        response = client.options(
+            "/api/health",
+            headers={
+                "Origin": origin,
+                "Access-Control-Request-Method": "GET",
+            },
+        )
+        assert response.status_code == 200
+        assert response.headers["access-control-allow-origin"] == origin
+
+    rejected = client.options(
+        "/api/health",
+        headers={
+            "Origin": "https://example.com",
+            "Access-Control-Request-Method": "GET",
+        },
+    )
+    assert rejected.status_code == 400
+    assert "access-control-allow-origin" not in rejected.headers
+
+
 def test_end_to_end_analysis_mask_and_exports(client: TestClient) -> None:
     original_hash = hashlib.sha256(FIXTURE.read_bytes()).hexdigest()
     job = _upload(client)
